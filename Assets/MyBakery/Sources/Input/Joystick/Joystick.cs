@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.OnScreen;
 
 public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
@@ -10,21 +9,29 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     [SerializeField] private RectTransform _handle;
 
     private Vector2 _startPosition;
+    private bool _isActivated;
 
-    public Vector2 Direction { get; private set; }
+    public static Vector2 Direction { get; private set; }
+
+    public static event Action Activated;
+    public static event Action Deactivated;
 
     private void Start()
     {
         _startPosition = _handleBackgorund.anchoredPosition;
         _handleBackgorund.gameObject.SetActive(false);
+        _isActivated = false;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         Vector2 pointPosition;
 
-        if(RectTransformUtility.ScreenPointToLocalPointInRectangle(_slidingArea, eventData.position, null, out pointPosition))
+        if(_isActivated == false && RectTransformUtility.ScreenPointToLocalPointInRectangle(_slidingArea, eventData.position, null, out pointPosition))
         {
+            _isActivated = true;
+            Activated?.Invoke();
+
             _handleBackgorund.gameObject.SetActive(true);
             _handleBackgorund.anchoredPosition = pointPosition;
         }
@@ -32,6 +39,9 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        _isActivated = false;
+        Deactivated?.Invoke();
+
         _handleBackgorund.anchoredPosition = _startPosition;
         _handle.anchoredPosition = Vector2.zero;
         _handleBackgorund.gameObject.SetActive(false);
@@ -51,9 +61,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
             _handle.anchoredPosition = handlePosititon * _handleBackgorund.sizeDelta / 2;
             
             if(handlePosititon != Vector2.zero)
-            {
-                Debug.Log(handlePosititon);
-            }
+                Direction = handlePosititon;
         }
     }
 }
