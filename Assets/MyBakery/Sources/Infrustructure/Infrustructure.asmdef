@@ -1,0 +1,16 @@
+{
+    "name": "Infrustructure",
+    "rootNamespace": "Virvon.Infrustructure",
+    "references": [
+        "GUID:fc26ebe710d355b4485d89aaba247358"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

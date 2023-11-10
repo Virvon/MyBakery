@@ -377,14 +377,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.15367576, y: 0, z: 0, w: 0.98812133}
+  m_LocalPosition: {x: 0, y: 7.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.68, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,9 +394,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f2f62f973c1c645baacc863dd301f3, type: 3}
+  m_Script: {fileID: 11500000, guid: a528e6ae7ac286348914015b173015a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {fileID: 1799741053}
 --- !u!1 &1278098308
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1278098309}
+  - component: {fileID: 1278098310}
   m_Layer: 0
   m_Name: GameBootstrapper
   m_TagString: Untagged
@@ -428,6 +430,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1278098310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278098308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0bb05f562180c4a8a819e78ff34878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1374711881
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +552,9 @@ GameObject:
   - component: {fileID: 1799741052}
   - component: {fileID: 1799741051}
   - component: {fileID: 1799741050}
-  - component: {fileID: 1799741054}
+  - component: {fileID: 1799741055}
+  - component: {fileID: 1799741057}
+  - component: {fileID: 1799741058}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -626,7 +642,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1799741054
+--- !u!54 &1799741055
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799741049}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!114 &1799741057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799741049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a699e63256974549acd9c47ef2654b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1799741058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -639,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 8
+  _rotationSpeed: 1080
 --- !u!1 &1816106065
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +696,7 @@ GameObject:
   - component: {fileID: 1816106069}
   - component: {fileID: 1816106068}
   - component: {fileID: 1816106067}
+  - component: {fileID: 1816106070}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -736,6 +782,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816106065}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1816106070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816106065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc188312efaab8741bb7d0fd99e9bfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2025257028
 GameObject:
   m_ObjectHideFlags: 0

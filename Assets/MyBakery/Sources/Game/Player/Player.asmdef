@@ -1,0 +1,17 @@
+{
+    "name": "Player",
+    "rootNamespace": "Virvon.MyBackery.Player",
+    "references": [
+        "GUID:fc26ebe710d355b4485d89aaba247358",
+        "GUID:9059bdc08198d2243bcf16e4dd53d49f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
