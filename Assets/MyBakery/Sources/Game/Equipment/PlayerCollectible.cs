@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using Virvon.MyBackery.Items;
 
 namespace Virvon.MyBackery.Equipment
 {
@@ -6,28 +8,27 @@ namespace Virvon.MyBackery.Equipment
     {
         private const int MaxItemsCount = 3;
 
-        private int _itemsCount;
+        [SerializeField] private Stack _stack;
 
-        public bool TryGiveItem()
+        private List<Stackable> _items = new();
+
+        public bool TryGiveItem(Stackable item)
         {
-            if (_itemsCount >= MaxItemsCount)
+            if (_items.Count >= MaxItemsCount)
                 return false;
 
-            _itemsCount++;
-
-            Debug.Log("Collect: " + _itemsCount);
+            _items.Add(item);
+            _stack.Add(item);
 
             return true;
         }
 
         public bool TryTakeItem()
         {
-            if (_itemsCount <= 0)
+            if (_items.Count <= 0)
                 return false;
 
-            _itemsCount--;
-
-            Debug.Log("Give: " + _itemsCount);
+            _items.Remove(_items[0]);
 
             return true;
         }

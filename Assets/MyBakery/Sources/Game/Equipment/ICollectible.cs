@@ -1,8 +1,10 @@
-﻿namespace Virvon.MyBackery.Equipment
+﻿using Virvon.MyBackery.Items;
+
+namespace Virvon.MyBackery.Equipment
 {
     internal interface ICollectible
     {
         bool TryTakeItem();
-        bool TryGiveItem();
+        bool TryGiveItem(Stackable item);
     }
 }

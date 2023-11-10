@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Virvon.MyBackery.Items;
 using Stack = Virvon.MyBackery.Items.Stack;
@@ -17,6 +18,7 @@ namespace Virvon.MyBackery.Equipment
         private float time;
         private bool _isCollectibleInZone;
         private int _itemsCount;
+        private List<Stackable> _items = new ();
 
         private void Update()
         {
@@ -31,7 +33,10 @@ namespace Virvon.MyBackery.Equipment
 
                 _itemsCount++;
 
-                _stack.Add(Instantiate(_item));
+                Item item = Instantiate(_item);
+
+                _items.Add(item);
+                _stack.Add(item);
             }
         }
 
@@ -59,8 +64,11 @@ namespace Virvon.MyBackery.Equipment
 
                 if (_itemsCount > 0 && _isCollectibleInZone)
                 {
-                    if (collectible.TryGiveItem())
+                    if (collectible.TryGiveItem(_items[0]))
+                    {
                         _itemsCount--;
+                        _items.Remove(_items[0]);
+                    }
                 }
             }
         }
