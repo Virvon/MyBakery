@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Virvon.MyBackery.Items;
 
@@ -23,15 +24,14 @@ namespace Virvon.MyBackery.Equipment
             return true;
         }
 
-        public bool TryTakeItem(out Stackable item)
+        public bool TryTakeItem(ItemType type, out Stackable item)
         {
-            item = null;
+            item = _items.Where(item => item.Type == type).FirstOrDefault();
 
-            if (_items.Count <= 0)
+            if (item == null)
                 return false;
 
-            item = _items[0];
-            _items.Remove(_items[0]);
+            _items.Remove(item);
 
             return true;
         }

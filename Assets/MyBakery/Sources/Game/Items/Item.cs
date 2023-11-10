@@ -1,7 +1,9 @@
-﻿namespace Virvon.MyBackery.Items
+﻿using UnityEngine;
+
+namespace Virvon.MyBackery.Items
 {
     public class Item : Stackable
     {
-
+        
     }
 }

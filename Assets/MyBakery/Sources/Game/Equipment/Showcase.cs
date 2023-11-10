@@ -12,6 +12,7 @@ namespace Virvon.MyBackery.Equipment
         private const float TakingCooldown = 1;
 
         [SerializeField] private Stack _stack;
+        [SerializeField] private ItemType _itemType;
 
         private bool _isCollectibleInZone;
         private List<Stackable> _items = new();
@@ -35,7 +36,7 @@ namespace Virvon.MyBackery.Equipment
 
                 if (_items.Count < MaxItemsCount && _isCollectibleInZone)
                 {
-                    if (collectible.TryTakeItem(out Stackable item))
+                    if (collectible.TryTakeItem(_itemType, out Stackable item))
                     {
                         _items.Add(item);
                         _stack.Add(item);

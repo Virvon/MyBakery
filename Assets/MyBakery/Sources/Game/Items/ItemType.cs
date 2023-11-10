@@ -1,7 +1,8 @@
 namespace Virvon.MyBackery.Items
 {
-    internal enum ItemType
+    public enum ItemType
     {
-        Example
+        Blue,
+        Red
     }
 }
