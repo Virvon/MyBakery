@@ -40,11 +40,6 @@ namespace Virvon.MyBackery.Equipment
             }
         }
 
-        protected override void ShowInfo()
-        {
-            Debug.Log("Items count: " + _itemsCount + "/" + MaxItemsCount);
-        }
-
         protected override void SetCollectible(ICollectible collectible)
         {
             _isCollectibleInZone = true;

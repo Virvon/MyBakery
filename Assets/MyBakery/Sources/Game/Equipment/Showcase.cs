@@ -1,5 +1,8 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using Virvon.MyBackery.Items;
+using Stack = Virvon.MyBackery.Items.Stack;
 
 namespace Virvon.MyBackery.Equipment
 {
@@ -8,8 +11,10 @@ namespace Virvon.MyBackery.Equipment
         private const int MaxItemsCount = 9;
         private const float TakingCooldown = 1;
 
+        [SerializeField] private Stack _stack;
+
         private bool _isCollectibleInZone;
-        private int _itemsCount;
+        private List<Stackable> _items = new();
 
         protected override void RemoveCollectible()
         {
@@ -22,21 +27,19 @@ namespace Virvon.MyBackery.Equipment
             StartCoroutine(Taker(collectible));
         }
 
-        protected override void ShowInfo()
-        {
-            Debug.Log("Itmes count: " + _itemsCount + "/" + MaxItemsCount);
-        }
-
         private IEnumerator Taker(ICollectible collectible)
         {
             while (_isCollectibleInZone)
             {
                 yield return new WaitForSeconds(TakingCooldown);
 
-                if (_itemsCount < MaxItemsCount && _isCollectibleInZone)
+                if (_items.Count < MaxItemsCount && _isCollectibleInZone)
                 {
-                    if (collectible.TryTakeItem())
-                        _itemsCount++;
+                    if (collectible.TryTakeItem(out Stackable item))
+                    {
+                        _items.Add(item);
+                        _stack.Add(item);
+                    }
                 }
             }
         }

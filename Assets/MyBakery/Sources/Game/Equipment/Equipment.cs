@@ -7,10 +7,7 @@ namespace Virvon.MyBackery.Equipment
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out ICollectible collectible))
-            {
-                ShowInfo();
                 SetCollectible(collectible);
-            }
         }
 
         private void OnTriggerExit(Collider other)
@@ -18,8 +15,6 @@ namespace Virvon.MyBackery.Equipment
             if (other.TryGetComponent(out ICollectible collectible))
                 RemoveCollectible();
         }
-
-        protected abstract void ShowInfo();
 
         protected abstract void SetCollectible(ICollectible collectible);
 

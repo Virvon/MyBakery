@@ -23,11 +23,14 @@ namespace Virvon.MyBackery.Equipment
             return true;
         }
 
-        public bool TryTakeItem()
+        public bool TryTakeItem(out Stackable item)
         {
+            item = null;
+
             if (_items.Count <= 0)
                 return false;
 
+            item = _items[0];
             _items.Remove(_items[0]);
 
             return true;
