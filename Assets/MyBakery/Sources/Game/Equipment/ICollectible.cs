@@ -2,7 +2,7 @@
 {
     internal interface ICollectible
     {
-        void TryTakeItem();
-        void TryGiveItem();
+        bool TryTakeItem();
+        bool TryGiveItem();
     }
 }

@@ -9,13 +9,21 @@ namespace Virvon.MyBackery.Equipment
             if (other.TryGetComponent(out ICollectible collectible))
             {
                 ShowInfo();
-                TakeCollectible(collectible);
+                SetCollectible(collectible);
             }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.TryGetComponent(out ICollectible collectible))
+                RemoveCollectible();
         }
 
         protected abstract void ShowInfo();
 
-        protected abstract void TakeCollectible(ICollectible collectible);
+        protected abstract void SetCollectible(ICollectible collectible);
+
+        protected abstract void RemoveCollectible();
     }
 
 }
