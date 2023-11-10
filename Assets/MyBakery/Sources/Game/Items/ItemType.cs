@@ -1,6 +1,6 @@
-namespace Virvon.MyBackert.Items
+namespace Virvon.MyBackery.Items
 {
-    public enum ItemType
+    internal enum ItemType
     {
         Example
     }

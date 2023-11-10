@@ -1,6 +1,6 @@
 {
     "name": "Items",
-    "rootNamespace": "Virvon.MyBackert.Items",
+    "rootNamespace": "Virvon.MyBackery.Items",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

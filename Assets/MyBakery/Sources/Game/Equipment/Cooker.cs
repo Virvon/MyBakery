@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Virvon.MyBackery.Items;
+using Stack = Virvon.MyBackery.Items.Stack;
 
 namespace Virvon.MyBackery.Equipment
 {
@@ -8,6 +10,9 @@ namespace Virvon.MyBackery.Equipment
         private const float CookingCooldown = 3;
         private const int MaxItemsCount = 5;
         private const float GivingCooldown = 1;
+
+        [SerializeField] private Stack _stack;
+        [SerializeField] private Item _item;
 
         private float time;
         private bool _isCollectibleInZone;
@@ -25,6 +30,8 @@ namespace Virvon.MyBackery.Equipment
                 time = 0;
 
                 _itemsCount++;
+
+                _stack.Add(Instantiate(_item));
             }
         }
 
