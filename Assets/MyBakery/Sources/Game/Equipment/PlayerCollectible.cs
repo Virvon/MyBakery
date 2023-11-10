@@ -22,7 +22,14 @@ namespace Virvon.MyBackery.Equipment
 
         public bool TryTakeItem()
         {
-            throw new System.NotImplementedException();
+            if (_itemsCount <= 0)
+                return false;
+
+            _itemsCount--;
+
+            Debug.Log("Give: " + _itemsCount);
+
+            return true;
         }
     }
 }

@@ -10,7 +10,6 @@ namespace Virvon.MyBackery.Equipment
         private const float GivingCooldown = 1;
 
         private float time;
-        private Coroutine _giver;
         private bool _isCollectibleInZone;
         private int _itemsCount;
 
@@ -37,7 +36,7 @@ namespace Virvon.MyBackery.Equipment
         protected override void SetCollectible(ICollectible collectible)
         {
             _isCollectibleInZone = true;
-            _giver = StartCoroutine(Giver(collectible));
+            StartCoroutine(Giver(collectible));
         }
 
         protected override void RemoveCollectible()

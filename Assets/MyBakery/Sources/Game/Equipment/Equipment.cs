@@ -25,5 +25,4 @@ namespace Virvon.MyBackery.Equipment
 
         protected abstract void RemoveCollectible();
     }
-
 }
