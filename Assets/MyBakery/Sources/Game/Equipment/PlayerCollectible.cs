@@ -13,6 +13,8 @@ namespace Virvon.MyBackery.Equipment
 
         private List<Stackable> _items = new();
 
+
+
         public bool TryGiveItem(Stackable item)
         {
             if (_items.Count >= MaxItemsCount)
