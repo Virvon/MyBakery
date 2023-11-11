@@ -4,7 +4,7 @@ namespace Virvon.MyBackery.Equipment
 {
     internal interface IGivable : ITakable
     {
-        ItemType Type { get; }
+        ItemType ItemType { get; }
 
         bool TryGive(Stackable item);
     }

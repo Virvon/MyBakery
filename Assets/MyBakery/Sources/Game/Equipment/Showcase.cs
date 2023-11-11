@@ -9,12 +9,14 @@ namespace Virvon.MyBackery.Equipment
     {
         private const int MaxItemsCount = 9;
 
+        [SerializeField] private EquipmentType _type;
         [SerializeField] private Stack _stack;
         [SerializeField] private ItemType _itemType;
 
         private List<Stackable> _items = new();
 
-        public ItemType Type => _itemType;
+        public ItemType ItemType => _itemType;
+        public EquipmentType Type => _type;
 
         public bool TryGive(Stackable item)
         {

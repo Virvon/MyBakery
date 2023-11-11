@@ -5,16 +5,20 @@ using Stack = Virvon.MyBackery.Items.Stack;
 
 namespace Virvon.MyBackery.Equipment
 {
+
     internal class Cooker : MonoBehaviour, ITakable
     {
         private const float CookingCooldown = 3;
         private const int MaxItemsCount = 5;
 
+        [SerializeField] private EquipmentType _type;
         [SerializeField] private Stack _stack;
         [SerializeField] private Item _item;
 
         private float time;
         private List<Stackable> _items = new ();
+
+        public EquipmentType Type => _type;
 
         public bool TryTake(out Stackable item)
         {
