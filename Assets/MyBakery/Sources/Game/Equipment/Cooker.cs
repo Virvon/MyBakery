@@ -40,7 +40,7 @@ namespace Virvon.MyBackery.Equipment
 
             time += Time.deltaTime;
 
-            if (time > CookingCooldown)
+            if (time >= CookingCooldown)
             {
                 time = 0;
 
@@ -51,6 +51,5 @@ namespace Virvon.MyBackery.Equipment
                 _stack.Add(item);
             }
         }
-
     }
 }

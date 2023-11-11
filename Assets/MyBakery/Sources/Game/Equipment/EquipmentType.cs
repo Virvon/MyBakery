@@ -3,6 +3,7 @@
     internal enum EquipmentType
     {
         Cooker,
-        Showcase
+        Showcase,
+        Improver
     }
 }
