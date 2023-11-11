@@ -1,21 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
-using Virvon.Infrustructure;
-using Virvon.MyBackery.Services;
 
 namespace Virvon.MyBackery.Player
 {
-    [RequireComponent(typeof(SurfaceSlider), typeof(Rigidbody))]
+
+    [RequireComponent(typeof(SurfaceSlider), typeof(Rigidbody), typeof(IInputSource)]
     internal class Player : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed;
         [SerializeField] private float _rotationSpeed = 1080;
 
-        private bool _isMoving;
-        private IInputService _input;
+        private bool _isMoving; 
         private SurfaceSlider _surfaceSlider;
         private Rigidbody _rigidbody;
         private Coroutine _mover;
+        private IInputSource _input;
 
         public IStatsProvider StatsProvider { get; private set; }
 
@@ -23,7 +22,7 @@ namespace Virvon.MyBackery.Player
         {
             _rigidbody = GetComponent<Rigidbody>();
             _surfaceSlider = GetComponent<SurfaceSlider>();
-            _input = Game.InputService;
+            _input = GetComponent<IInputSource>();
 
             StatsProvider = new DeffaultStats(_movementSpeed);
 
