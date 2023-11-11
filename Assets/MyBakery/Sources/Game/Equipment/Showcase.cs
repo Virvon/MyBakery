@@ -1,48 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Virvon.MyBackery.Items;
 using Stack = Virvon.MyBackery.Items.Stack;
 
 namespace Virvon.MyBackery.Equipment
 {
-    internal class Showcase : Equipment
+    internal class Showcase : MonoBehaviour, IGivable
     {
         private const int MaxItemsCount = 9;
-        private const float TakingCooldown = 1;
 
         [SerializeField] private Stack _stack;
         [SerializeField] private ItemType _itemType;
 
-        private bool _isCollectibleInZone;
         private List<Stackable> _items = new();
 
-        protected override void RemoveCollectible()
+        public ItemType Type => _itemType;
+
+        public bool TryGive(Stackable item)
         {
-            _isCollectibleInZone = false;
+            if (_items.Count >= MaxItemsCount || item == null)
+                return false;
+
+            _items.Add(item);
+            _stack.Add(item);
+
+            return true;
         }
 
-        protected override void SetCollectible(ICollectible collectible)
+        public bool TryTake(out Stackable item)
         {
-            _isCollectibleInZone = true;
-            StartCoroutine(Taker(collectible));
-        }
+            item = null;
 
-        private IEnumerator Taker(ICollectible collectible)
-        {
-            while (_isCollectibleInZone)
-            {
-                yield return new WaitForSeconds(TakingCooldown);
+            if (_items.Count == 0)
+                return false;
 
-                if (_items.Count < MaxItemsCount && _isCollectibleInZone)
-                {
-                    if (collectible.TryTakeItem(_itemType, out Stackable item))
-                    {
-                        _items.Add(item);
-                        _stack.Add(item);
-                    }
-                }
-            }
+            item = _items[0];
+
+            return true;
         }
     }
 }
