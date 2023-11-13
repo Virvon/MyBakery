@@ -3,7 +3,7 @@ using Virvon.StateMachineModul;
 
 internal class BootstrapState : IState
 {
-    private const string InitScene = "Init";
+    private const string InitScene = "Boot";
     private const string GameScene = "Game";
 
     private readonly StateMachine _stateMachine;
