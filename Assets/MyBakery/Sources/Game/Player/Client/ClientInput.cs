@@ -8,32 +8,42 @@ namespace Virvon.MyBackery.Player
     [RequireComponent(typeof(NavMeshAgent))]
     internal class ClientInput : MonoBehaviour, IInputSource
     {
-        [SerializeField] private Transform _target;
-
         private NavMeshPath _path;
         private NavMeshAgent _agent;
+        private MovementState _movementState;
 
         public Vector2 Direction { get; private set; }
 
         public event Action Activated;
         public event Action Deactivated;
 
-        private void Start()
+        private void OnEnable()
         {
             _agent = GetComponent<NavMeshAgent>();
             _path = new();
 
-            StartCoroutine(DirectionCalculate());
+            _movementState.Entered += OnEntered;
         }
 
-        private IEnumerator DirectionCalculate()
+        private void OnDisable()
         {
-            Activated?.Invoke();
+            _movementState.Entered -= OnEntered;
+        }
+
+        private void OnEntered(Vector3 targetPosition, Action callback)
+        {
+            StartCoroutine(DirectionCalculater(targetPosition, callback));
+        }
+
+        private IEnumerator DirectionCalculater(Vector3 targerPosition, Action callback)
+        {
             bool isFinish = false;
+
+            Activated?.Invoke();
 
             while (isFinish == false)
             {
-                _agent.CalculatePath(_target.position, _path);
+                _agent.CalculatePath(targerPosition, _path);
 
                 while ((_path.corners[1] - _agent.transform.position).magnitude > 1.2f)
                 {
@@ -49,6 +59,7 @@ namespace Virvon.MyBackery.Player
             }
 
             Deactivated?.Invoke();
+            callback?.Invoke();
         }
     }
 }

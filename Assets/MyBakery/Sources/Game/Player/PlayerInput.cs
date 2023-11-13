@@ -16,7 +16,7 @@ namespace Virvon.MyBackery.Player
 
         private void Awake()
         {
-            _input = Game.InputService;
+            //_input = Game.InputService;
 
             _input.Activated += () => Activated?.Invoke();
             _input.Deactivated += () => Deactivated?.Invoke();

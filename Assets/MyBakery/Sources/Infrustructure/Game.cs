@@ -4,11 +4,11 @@ namespace Virvon.Infrustructure
 {
     public class Game
     {
-        public static IInputService InputService { get; private set; }
+        public GameStateMachine StateMachine;
 
         public Game()
         {
-            InputService = new InputService();
+            StateMachine = new GameStateMachine(AllServices.Instance);
         }
     }
 }
