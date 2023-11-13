@@ -7,11 +7,13 @@ namespace Virvon.Infrustructure
 {
     public class GameStateMachine : StateMachine
     {
-        public GameStateMachine(AllServices services)
+        public GameStateMachine(AllServices services, SceneLoader sceneLoader, LoadingPanel loadingPanel)
         {
-            _states = new Dictionary<Type, IState>
+            _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(BootstrapState)] = new BootstrapState(services)
+                [typeof(BootstrapState)] = new BootstrapState(this, services, sceneLoader),
+                [typeof(LoadSceneState)] = new LoadSceneState(sceneLoader, loadingPanel),
+                [typeof(GameLoopState)] = new GameLoopState()
             };
         }
     }

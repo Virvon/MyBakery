@@ -22,12 +22,12 @@ namespace Virvon.MyBackery.Player
             _agent = GetComponent<NavMeshAgent>();
             _path = new();
 
-            _movementState.Entered += OnEntered;
+            //_movementState.Entered += OnEntered;
         }
 
         private void OnDisable()
         {
-            _movementState.Entered -= OnEntered;
+            //_movementState.Entered -= OnEntered;
         }
 
         private void OnEntered(Vector3 targetPosition, Action callback)

@@ -5,7 +5,7 @@ namespace Virvon.StateMachineModul
 {
     public abstract class StateMachine : IStateMachine
     {
-        protected Dictionary<Type, IState> _states;
+        protected Dictionary<Type, IExitableState> _states;
 
         private IExitableState _currentState;
 

@@ -6,9 +6,9 @@ namespace Virvon.Infrustructure
     {
         public GameStateMachine StateMachine;
 
-        public Game()
+        public Game(LoadingPanel loadingPanel)
         {
-            StateMachine = new GameStateMachine(AllServices.Instance);
+            StateMachine = new GameStateMachine(AllServices.Instance, new SceneLoader(), loadingPanel);
         }
     }
 }
