@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Virvon.MyBackery.Player
 {
 
-    [RequireComponent(typeof(SurfaceSlider), typeof(Rigidbody), typeof(IInputSource)]
+    [RequireComponent(typeof(SurfaceSlider), typeof(Rigidbody), typeof(IInputSource))]
     internal class Player : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed;
