@@ -1,0 +1,19 @@
+{
+    "name": "Movement",
+    "rootNamespace": "Virvon.MyBackery.Movement",
+    "references": [
+        "GUID:9059bdc08198d2243bcf16e4dd53d49f",
+        "GUID:fc26ebe710d355b4485d89aaba247358",
+        "GUID:1bd5196a790a1a54da044aee1706e086",
+        "GUID:2ed1785040e6dc749a5f5b9c1ec1b111"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

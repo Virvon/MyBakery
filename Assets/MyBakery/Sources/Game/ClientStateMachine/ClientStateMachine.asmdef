@@ -1,0 +1,16 @@
+{
+    "name": "ClientStateMachine",
+    "rootNamespace": "Virvon.MyBackery.ClientStateMachine",
+    "references": [
+        "GUID:c9ecf5b1effd5304c93247aae1fe7cd5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

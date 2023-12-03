@@ -7,15 +7,13 @@ internal class BootstrapState : IState
     private const string GameScene = "Game";
 
     private readonly StateMachine _stateMachine;
-    private readonly AllServices _services;
     private readonly SceneLoader _sceneLoader;
 
-    public BootstrapState(StateMachine stateMachine, AllServices services, SceneLoader sceneLoader)
+    public BootstrapState(StateMachine stateMachine, SceneLoader sceneLoader)
     {
         _stateMachine = stateMachine;
-        _services = services;
 
-        RegisterServices();
+        //RegisterServices();
         _sceneLoader = sceneLoader;
     }
 
@@ -31,7 +29,7 @@ internal class BootstrapState : IState
 
     private void RegisterServices()
     {
-        _services.RegisterSingle<IInputService>(new InputService());
+        
     }
 
     private void EnterLoadScene() =>

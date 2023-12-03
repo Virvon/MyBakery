@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
+using Zenject;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
-
+    private Transform _target;
     private Vector3 _startOffset;
 
-    private void Start()
+    [Inject]
+    private void Construct(PL targer)
     {
-         _startOffset = transform.position - _target.position;
+        _target = targer.transform;
+        _startOffset = transform.position - _target.position;
     }
 
     private void LateUpdate()

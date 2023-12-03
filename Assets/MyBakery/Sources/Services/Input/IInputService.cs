@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Virvon.MyBackery.Services
 {
-    public interface IInputService : IService
+    public interface IInputService
     {
         Vector2 Direction { get; }
 

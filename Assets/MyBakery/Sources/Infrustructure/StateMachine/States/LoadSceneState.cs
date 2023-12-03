@@ -1,7 +1,7 @@
 ﻿using System;
 using Virvon.StateMachineModul;
 
-public class LoadSceneState : IPayloadState<string>
+internal class LoadSceneState : IPayloadState<string>
 {
     private readonly SceneLoader _sceneLoader;
     private readonly LoadingPanel _loadingPanel;

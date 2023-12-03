@@ -5,15 +5,14 @@ using Virvon.StateMachineModul;
 
 namespace Virvon.Infrustructure
 {
-    public class GameStateMachine : StateMachine
+    internal class GameStateMachine : StateMachine
     {
-        public GameStateMachine(AllServices services, SceneLoader sceneLoader, LoadingPanel loadingPanel)
+        public GameStateMachine(IClientFactory clientFactory, SceneLoader sceneLoader, LoadingPanel loadingPanel)
         {
             _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(BootstrapState)] = new BootstrapState(this, services, sceneLoader),
                 [typeof(LoadSceneState)] = new LoadSceneState(sceneLoader, loadingPanel),
-                [typeof(GameLoopState)] = new GameLoopState()
+                [typeof(GameLoopState)] = new GameLoopState(clientFactory)
             };
         }
     }

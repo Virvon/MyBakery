@@ -1,14 +1,15 @@
-﻿using Virvon.MyBackery.Services;
+﻿using UnityEngine;
 
 namespace Virvon.Infrustructure
 {
-    public class Game
+    internal class Game
     {
         public GameStateMachine StateMachine;
 
-        public Game(LoadingPanel loadingPanel)
+        public Game(IClientFactory clientFactory, SceneLoader sceneLoader, LoadingPanel loadingPanel)
         {
-            StateMachine = new GameStateMachine(AllServices.Instance, new SceneLoader(), loadingPanel);
+            Debug.Log("Injected game");
+            StateMachine = new GameStateMachine(clientFactory, sceneLoader, loadingPanel);
         }
     }
 }
