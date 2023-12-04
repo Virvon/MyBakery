@@ -1,6 +1,6 @@
 {
     "name": "StatsDecorator",
-    "rootNamespace": "Virvon.MyBackery.StatsDecorator",
+    "rootNamespace": "Virvon.MyBakery.StatsDecorator",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

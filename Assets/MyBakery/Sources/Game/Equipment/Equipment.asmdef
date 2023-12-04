@@ -1,6 +1,6 @@
 {
     "name": "Equipment",
-    "rootNamespace": "Virvon.MyBackery.Equipment",
+    "rootNamespace": "Virvon.MyBakery.Equipment",
     "references": [
         "GUID:1e114cab7b2750042b34df58596ecb7e"
     ],

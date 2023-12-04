@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Virvon.MyBackery.Equipment
+namespace Virvon.MyBakery.Equipment
 {
     internal abstract class Equipment : MonoBehaviour
     {

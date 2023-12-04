@@ -1,4 +1,4 @@
-﻿namespace Virvon.MyBackery.StatsDecorator
+﻿namespace Virvon.MyBakery.StatsDecorator
 {
     public interface IStatsProvider
     {

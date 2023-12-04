@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Virvon.MyBackery.Services;
+using Virvon.MyBakery.Services;
 using Virvon.StateMachineModul;
 
-namespace Virvon.Infrustructure
+namespace Virvon.MyBakery.Infrustructure
 {
     internal class GameStateMachine : StateMachine
     {

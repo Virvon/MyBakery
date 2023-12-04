@@ -1,14 +1,17 @@
-﻿using Virvon.Infrustructure;
+﻿using Virvon.MyBakery.Infrustructure;
 using Zenject;
 
-internal class FactoriesInstaller : MonoInstaller
+namespace Virvon.MyBakery.Infrustrucure
 {
-    public override void InstallBindings()
+    internal class FactoriesInstaller : MonoInstaller
     {
-        Container
-            .Bind<IClientFactory>()
-            .To<ClientFactory>()
-            .AsSingle()
-            .NonLazy();
+        public override void InstallBindings()
+        {
+            Container
+                .Bind<IClientFactory>()
+                .To<ClientFactory>()
+                .AsSingle()
+                .NonLazy();
+        }
     }
 }

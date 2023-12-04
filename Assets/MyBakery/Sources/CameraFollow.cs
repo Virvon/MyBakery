@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Virvon.MyBakery.Infrustrucure;
 using Zenject;
 
 public class CameraFollow : MonoBehaviour
@@ -7,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 _startOffset;
 
     [Inject]
-    private void Construct(PL targer)
+    private void Construct(Player targer)
     {
         _target = targer.transform;
         _startOffset = transform.position - _target.position;

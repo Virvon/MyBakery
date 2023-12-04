@@ -1,24 +1,28 @@
 ﻿using System;
+using Virvon.MyBakery.Services;
 using Virvon.StateMachineModul;
 
-internal class LoadSceneState : IPayloadState<string>
+namespace Virvon.MyBakery.Infrustructure
 {
-    private readonly SceneLoader _sceneLoader;
-    private readonly LoadingPanel _loadingPanel;
-
-    public LoadSceneState(SceneLoader sceneLoader, LoadingPanel loadingPanel)
+    internal class LoadSceneState : IPayloadState<string>
     {
-        _sceneLoader = sceneLoader;
-        _loadingPanel = loadingPanel;
+        private readonly SceneLoader _sceneLoader;
+        private readonly LoadingPanel _loadingPanel;
+
+        public LoadSceneState(SceneLoader sceneLoader, LoadingPanel loadingPanel)
+        {
+            _sceneLoader = sceneLoader;
+            _loadingPanel = loadingPanel;
+        }
+
+        public void Enter(string sceneName, Action callback)
+        {
+            _sceneLoader.Load(sceneName, callback);
+
+            _loadingPanel.Open();
+        }
+
+        public void Exit() =>
+            _loadingPanel.Close();
     }
-
-    public void Enter(string sceneName, Action callback)
-    {
-        _sceneLoader.Load(sceneName, callback);
-
-        _loadingPanel.Open();
-    }
-
-    public void Exit() =>
-        _loadingPanel.Close();
 }

@@ -1,26 +1,30 @@
 ﻿using UnityEngine;
 using Zenject;
-using Virvon.Infrustructure;
-using Virvon.MyBackery.Services;
 
-internal class LocationInstaller : MonoInstaller
+namespace Virvon.MyBakery.Infrustrucure
 {
-    [SerializeField] private Transform _startPoint;
-    [SerializeField] private GameObject _playerPrefab;
-
-    public override void InstallBindings()
+    namespace Virvon.Infrustructure
     {
-        BindPlayer();
-    }
+        internal class LocationInstaller : MonoInstaller
+        {
+            [SerializeField] private Transform _startPoint;
+            [SerializeField] private GameObject _playerPrefab;
 
-    private void BindPlayer()
-    {
-        PL player = Container
-                    .InstantiatePrefabForComponent<PL>(_playerPrefab, _startPoint);
+            public override void InstallBindings()
+            {
+                BindPlayer();
+            }
 
-        Container
-            .Bind<PL>()
-            .FromInstance(player)
-            .AsSingle();
+            private void BindPlayer()
+            {
+                Player player = Container
+                           .InstantiatePrefabForComponent<Player>(_playerPrefab, _startPoint);
+
+                Container
+                    .Bind<Player>()
+                    .FromInstance(player)
+                    .AsSingle();
+            }
+        }
     }
 }

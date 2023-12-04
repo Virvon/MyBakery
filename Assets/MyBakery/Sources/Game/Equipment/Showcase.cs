@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Virvon.MyBackery.Items;
-using Stack = Virvon.MyBackery.Items.Stack;
+using Virvon.MyBakery.Items;
+using Stack = Virvon.MyBakery.Items.Stack;
 
-namespace Virvon.MyBackery.Equipment
+namespace Virvon.MyBakery.Equipment
 {
     internal class Showcase : MonoBehaviour, IGivable
     {

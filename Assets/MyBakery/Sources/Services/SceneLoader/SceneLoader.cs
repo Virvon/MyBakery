@@ -2,21 +2,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader
+namespace Virvon.MyBakery.Services
 {
-    AsyncOperation _waitNextScene;
-
-    public void Load(string scene, Action callback = null)
+    public class SceneLoader
     {
-        if (SceneManager.GetActiveScene().name == scene)
+        AsyncOperation _waitNextScene;
+
+        public void Load(string scene, Action callback = null)
         {
-            callback?.Invoke();
+            if (SceneManager.GetActiveScene().name == scene)
+            {
+                callback?.Invoke();
 
-            return;
+                return;
+            }
+
+            _waitNextScene = SceneManager.LoadSceneAsync(scene);
+
+            _waitNextScene.completed += _ => callback?.Invoke();
         }
-
-        _waitNextScene = SceneManager.LoadSceneAsync(scene);
-
-        _waitNextScene.completed += _ => callback?.Invoke();
     }
 }

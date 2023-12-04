@@ -1,6 +1,6 @@
 {
     "name": "Movement",
-    "rootNamespace": "Virvon.MyBackery.Movement",
+    "rootNamespace": "Virvon.MyBakery.Movement",
     "references": [
         "GUID:9059bdc08198d2243bcf16e4dd53d49f",
         "GUID:fc26ebe710d355b4485d89aaba247358",

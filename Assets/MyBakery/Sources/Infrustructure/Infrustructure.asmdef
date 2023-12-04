@@ -1,6 +1,6 @@
 {
     "name": "Infrustructure",
-    "rootNamespace": "Virvon.Infrustructure",
+    "rootNamespace": "Virvon.MyBakery.Infrustructure",
     "references": [
         "GUID:fc26ebe710d355b4485d89aaba247358",
         "GUID:c9ecf5b1effd5304c93247aae1fe7cd5",

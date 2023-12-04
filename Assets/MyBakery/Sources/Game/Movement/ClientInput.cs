@@ -2,9 +2,9 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using Virvon.MyBackery.ClientStateMachine;
+using Virvon.MyBakery.ClientStateMachine;
 
-namespace Virvon.MyBackery.Movement
+namespace Virvon.MyBakery.Movement
 {
     [RequireComponent(typeof(NavMeshAgent))]
     internal class ClientInput : MonoBehaviour, IInputSource

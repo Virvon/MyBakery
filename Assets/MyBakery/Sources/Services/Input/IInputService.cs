@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Virvon.MyBackery.Services
+namespace Virvon.MyBakery.Services
 {
     public interface IInputService
     {

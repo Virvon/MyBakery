@@ -1,4 +1,4 @@
-﻿namespace Virvon.MyBackery.Equipment
+﻿namespace Virvon.MyBakery.Equipment
 {
     internal enum EquipmentType
     {

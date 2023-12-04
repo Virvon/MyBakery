@@ -1,6 +1,6 @@
 {
     "name": "Services",
-    "rootNamespace": "Virvon.MyBackery.Services",
+    "rootNamespace": "Virvon.MyBakery.Services",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

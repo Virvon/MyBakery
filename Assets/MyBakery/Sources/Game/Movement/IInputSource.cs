@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Virvon.MyBackery.Movement
+namespace Virvon.MyBakery.Movement
 {
     internal interface IInputSource
     {

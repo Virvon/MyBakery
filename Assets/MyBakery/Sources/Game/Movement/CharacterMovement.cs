@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
-using Virvon.MyBackery.StatsDecorator;
+using Virvon.MyBakery.StatsDecorator;
 
-namespace Virvon.MyBackery.Movement
+namespace Virvon.MyBakery.Movement
 {
 
     [RequireComponent(typeof(SurfaceSlider), typeof(Rigidbody), typeof(IInputSource))]

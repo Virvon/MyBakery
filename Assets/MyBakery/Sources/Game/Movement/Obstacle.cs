@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Virvon.MyBackery.Movement
+namespace Virvon.MyBakery.Movement
 {
     internal class Obstacle : MonoBehaviour { }
 }

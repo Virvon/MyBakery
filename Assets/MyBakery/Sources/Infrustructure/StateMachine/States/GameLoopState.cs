@@ -1,23 +1,24 @@
-﻿using System;
-using Virvon.Infrustructure;
-using Virvon.StateMachineModul;
+﻿using Virvon.StateMachineModul;
 
-internal class GameLoopState : IState
+namespace Virvon.MyBakery.Infrustructure
 {
-    private IClientFactory _clientFactory;
-
-    public GameLoopState(IClientFactory clientFactory)
+    internal class GameLoopState : IState
     {
-        _clientFactory = clientFactory;
-    }
+        private IClientFactory _clientFactory;
 
-    public void Enter()
-    {
-        
-    }
+        public GameLoopState(IClientFactory clientFactory)
+        {
+            _clientFactory = clientFactory;
+        }
 
-    public void Exit()
-    {
-        
+        public void Enter()
+        {
+
+        }
+
+        public void Exit()
+        {
+
+        }
     }
 }

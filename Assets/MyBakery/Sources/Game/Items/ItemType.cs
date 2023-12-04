@@ -1,4 +1,4 @@
-namespace Virvon.MyBackery.Items
+namespace Virvon.MyBakery.Items
 {
     public enum ItemType
     {

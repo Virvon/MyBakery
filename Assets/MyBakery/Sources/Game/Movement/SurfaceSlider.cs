@@ -1,4 +1,4 @@
-﻿namespace Virvon.MyBackery.Movement
+﻿namespace Virvon.MyBakery.Movement
 {
     using UnityEngine;
 

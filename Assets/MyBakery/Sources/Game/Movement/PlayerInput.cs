@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
-using Virvon.Infrustructure;
-using Virvon.MyBackery.Services;
+using Virvon.MyBakery.Services;
 using Zenject;
 
-namespace Virvon.MyBackery.Movement
+namespace Virvon.MyBakery.Movement
 {
     internal class PlayerInput : MonoBehaviour, IInputSource
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Virvon.MyBackery.Items
+namespace Virvon.MyBakery.Items
 {
     public class Stackable : MonoBehaviour
     {

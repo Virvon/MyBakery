@@ -1,6 +1,6 @@
-﻿using Virvon.MyBackery.Items;
+﻿using Virvon.MyBakery.Items;
 
-namespace Virvon.MyBackery.Equipment
+namespace Virvon.MyBakery.Equipment
 {
     internal interface ITakable
     {

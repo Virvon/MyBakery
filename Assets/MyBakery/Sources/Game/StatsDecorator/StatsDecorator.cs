@@ -1,4 +1,4 @@
-﻿namespace Virvon.MyBackery.StatsDecorator
+﻿namespace Virvon.MyBakery.StatsDecorator
 {
     internal abstract class StatsDecorator : IStatsProvider
     {
