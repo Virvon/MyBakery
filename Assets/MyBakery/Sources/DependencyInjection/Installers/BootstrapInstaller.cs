@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using Virvon.MyBakery.Infrustructure;
 using Virvon.MyBakery.Services;
 using Zenject;
 
-namespace Virvon.MyBakery.Infrustrucure
+namespace Virvon.MyBakery.DependencyInjection
 {
     internal class BootstrapInstaller : MonoInstaller
     {

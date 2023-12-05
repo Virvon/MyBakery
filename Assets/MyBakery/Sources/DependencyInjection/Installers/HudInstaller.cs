@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace Virvon.MyBakery.Infrustrucure
+namespace Virvon.MyBakery.DependencyInjection
 {
     internal class HudInstaller : MonoInstaller
     {

@@ -1,8 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace Virvon.MyBakery.Infrustructure
+namespace Virvon.MyBakery.DependencyInjection
 {
     internal class ClientFactory : IClientFactory
     {

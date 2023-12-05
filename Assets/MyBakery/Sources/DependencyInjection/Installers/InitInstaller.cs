@@ -1,9 +1,8 @@
-﻿using Virvon.MyBakery.Infrustructure;
-using Zenject;
+﻿using Zenject;
 
-namespace Virvon.MyBakery.Infrustrucure
+namespace Virvon.MyBakery.DependencyInjection
 {
-    internal class TestInstaller : MonoInstaller, IInitializable
+    internal class InitInstaller : MonoInstaller, IInitializable
     {
         private const string GameScene = "Game";
 
@@ -26,7 +25,7 @@ namespace Virvon.MyBakery.Infrustrucure
         private void BindSelfInterface()
         {
             Container
-                .BindInterfacesTo<TestInstaller>()
+                .BindInterfacesTo<InitInstaller>()
                 .FromInstance(this)
                 .AsSingle();
         }

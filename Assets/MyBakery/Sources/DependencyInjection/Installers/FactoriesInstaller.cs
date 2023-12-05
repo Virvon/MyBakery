@@ -1,7 +1,6 @@
-﻿using Virvon.MyBakery.Infrustructure;
-using Zenject;
+﻿using Zenject;
 
-namespace Virvon.MyBakery.Infrustrucure
+namespace Virvon.MyBakery.DependencyInjection
 {
     internal class FactoriesInstaller : MonoInstaller
     {
