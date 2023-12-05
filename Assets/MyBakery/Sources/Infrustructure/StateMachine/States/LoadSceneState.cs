@@ -4,7 +4,7 @@ using Virvon.StateMachineModul;
 
 namespace Virvon.MyBakery.Infrustructure
 {
-    internal class LoadSceneState : IPayloadState<string>
+    public class LoadSceneState : IPayloadState<string>
     {
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingPanel _loadingPanel;

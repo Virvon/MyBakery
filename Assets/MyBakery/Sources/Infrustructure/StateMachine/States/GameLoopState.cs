@@ -1,8 +1,9 @@
-﻿using Virvon.StateMachineModul;
+﻿using Virvon.MyBakery.DependencyInjection.Factories;
+using Virvon.StateMachineModul;
 
 namespace Virvon.MyBakery.Infrustructure
 {
-    internal class GameLoopState : IState
+    public class GameLoopState : IState
     {
         private IClientFactory _clientFactory;
 

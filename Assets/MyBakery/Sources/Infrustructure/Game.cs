@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using Virvon.MyBakery.DependencyInjection.Factories;
 using Virvon.MyBakery.Services;
 
 namespace Virvon.MyBakery.Infrustructure
 {
-    internal class Game
+    public class Game
     {
         public GameStateMachine StateMachine;
 

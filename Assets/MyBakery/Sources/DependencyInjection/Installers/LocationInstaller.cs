@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace Virvon.MyBakery.DependencyInjection
+namespace Virvon.MyBakery.DependencyInjection.Installers
 {
     internal class LocationInstaller : MonoInstaller
     {

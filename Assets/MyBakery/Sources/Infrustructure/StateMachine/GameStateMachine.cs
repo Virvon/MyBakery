@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Virvon.MyBakery.DependencyInjection.Factories;
 using Virvon.MyBakery.Services;
 using Virvon.StateMachineModul;
 
 namespace Virvon.MyBakery.Infrustructure
 {
-    internal class GameStateMachine : StateMachine
+    public class GameStateMachine : StateMachine
     {
         public GameStateMachine(IClientFactory clientFactory, SceneLoader sceneLoader, LoadingPanel loadingPanel)
         {

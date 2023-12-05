@@ -1,6 +1,8 @@
-﻿using Zenject;
+﻿using Virvon.MyBakery.DependencyInjection.Factories;
+using Virvon.MyBakery.Infrustructure;
+using Zenject;
 
-namespace Virvon.MyBakery.DependencyInjection
+namespace Virvon.MyBakery.DependencyInjection.Installers
 {
     internal class InitInstaller : MonoInstaller, IInitializable
     {

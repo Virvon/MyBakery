@@ -1,9 +1,9 @@
 using UnityEngine;
 using Zenject;
 
-namespace Virvon.MyBakery.DependencyInjection
+namespace Virvon.MyBakery.DependencyInjection.Factories
 {
-    internal class ClientFactory : IClientFactory
+    public class ClientFactory : IClientFactory
     {
         private readonly DiContainer _diContainer;
 

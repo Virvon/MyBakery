@@ -1,4 +1,4 @@
-﻿namespace Virvon.MyBakery.DependencyInjection
+﻿namespace Virvon.MyBakery.DependencyInjection.Factories
 {
     public interface IClientFactory
     {

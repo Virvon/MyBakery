@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Virvon.MyBakery.Infrustrucure;
 using Zenject;
 
 public class CameraFollow : MonoBehaviour
