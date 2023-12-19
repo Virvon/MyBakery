@@ -2,36 +2,28 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using Virvon.MyBakery.ClientStateMachine;
+using Zenject;
 
 namespace Virvon.MyBakery.Movement
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    internal class ClientInput : MonoBehaviour, IInputSource
+    public class ClientInput : MonoBehaviour, IInputSource
     {
         private NavMeshPath _path;
         private NavMeshAgent _agent;
-        private MovementState _movementState;
 
         public Vector2 Direction { get; private set; }
 
         public event Action Activated;
         public event Action Deactivated;
 
-        private void OnEnable()
+        private void Start()
         {
             _agent = GetComponent<NavMeshAgent>();
             _path = new();
-
-            //_movementState.Entered += OnEntered;
         }
 
-        private void OnDisable()
-        {
-            //_movementState.Entered -= OnEntered;
-        }
-
-        private void OnEntered(Vector3 targetPosition, Action callback)
+        public void SetTarget(Vector3 targetPosition, Action callback)
         {
             StartCoroutine(DirectionCalculater(targetPosition, callback));
         }

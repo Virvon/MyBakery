@@ -1,16 +1,22 @@
 ﻿using System;
 using UnityEngine;
+using Virvon.MyBakery.Movement;
 using Virvon.StateMachineModul;
 
-namespace Virvon.MyBakery.ClientStateMachine
+namespace Virvon.MyBakery.Client
 {
     public class MovementState : IPayloadState<Vector3>
     {
-        public event Action<Vector3, Action> Entered;
+        private ClientInput _input;
+
+        public MovementState(ClientInput input)
+        {
+            _input = input;
+        }
 
         public void Enter(Vector3 payload, Action callback = null)
         {
-            Entered?.Invoke(payload, callback);
+            _input.SetTarget(payload, callback);
         }
 
         public void Exit()

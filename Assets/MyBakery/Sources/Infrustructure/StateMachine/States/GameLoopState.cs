@@ -14,7 +14,7 @@ namespace Virvon.MyBakery.Infrustructure
 
         public void Enter()
         {
-
+            _clientFactory.Load();
         }
 
         public void Exit()

@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startPoint: {fileID: 1467118535}
   _playerPrefab: {fileID: 9097428615341224950, guid: 919bcbf09eab3bb448eb49089aacf7d1, type: 3}
-  _testQueue: {fileID: 0}
+  _testQueue: {fileID: 4224068290022845461, guid: d37fd75755c561b4b8070086dcbab788, type: 3}
 --- !u!114 &32752106
 MonoBehaviour:
   m_ObjectHideFlags: 0

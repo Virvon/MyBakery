@@ -15,13 +15,7 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
 
         public void Initialize()
         {
-            LoadFactories();
             EnterGameLoopState();
-        }
-
-        private void LoadFactories()
-        {
-            Container.Resolve<IClientFactory>().Load();
         }
 
         private void BindSelfInterface()

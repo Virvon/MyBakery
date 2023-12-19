@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Virvon.MyBakery.Equipment;
 using Zenject;
 
 namespace Virvon.MyBakery.DependencyInjection.Installers
@@ -12,12 +13,27 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
         public override void InstallBindings()
         {
             BindPlayer();
+            BindTestQueue();
+        }
+
+        private void BindTestQueue()
+        {
+            Debug.Log("bind queue");
+            TestQueue queue = Container.InstantiatePrefabForComponent<TestQueue>(_testQueue);
+
+            Container
+                .Bind<TestQueue>()
+                .FromInstance(queue)
+                .AsSingle();
+
+            Debug.Log(Container);
+
+            Debug.Log("Have queue " + (Container.Resolve<TestQueue>() != null));
         }
 
         private void BindPlayer()
         {
-            Player player = Container
-                       .InstantiatePrefabForComponent<Player>(_playerPrefab, _startPoint);
+            Player player = Container.InstantiatePrefabForComponent<Player>(_playerPrefab, _startPoint);
 
             Container
                 .Bind<Player>()

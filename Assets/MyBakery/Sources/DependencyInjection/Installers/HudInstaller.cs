@@ -14,8 +14,7 @@ namespace Virvon.MyBakery.DependencyInjection
 
         private void BindHud()
         {
-            Container
-                .InstantiatePrefab(_hud);
+            Container.InstantiatePrefab(_hud);
         }
     }
 }

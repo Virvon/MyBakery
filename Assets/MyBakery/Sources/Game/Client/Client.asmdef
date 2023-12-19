@@ -1,8 +1,10 @@
 {
-    "name": "ClientStateMachine",
-    "rootNamespace": "Virvon.MyBakery.ClientStateMachine",
+    "name": "Client",
+    "rootNamespace": "Virvon.MyBakery.Client",
     "references": [
-        "GUID:c9ecf5b1effd5304c93247aae1fe7cd5"
+        "GUID:c9ecf5b1effd5304c93247aae1fe7cd5",
+        "GUID:3aaa2af5688cf6547a0d6c8cc386e12c",
+        "GUID:4ed4c217d259c8d42913bcb8f7e2db79"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

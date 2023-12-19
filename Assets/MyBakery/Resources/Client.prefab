@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 6709805268374874457}
   - component: {fileID: 6709805268374874456}
   - component: {fileID: 6709805268374874459}
+  - component: {fileID: -4710802902277456113}
   m_Layer: 0
   m_Name: Client
   m_TagString: Untagged
@@ -225,6 +226,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 1
   _rotationSpeed: 1080
+--- !u!114 &-4710802902277456113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709805268374874448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6eb35608361434da32545b3f996374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6709805268427748776
 GameObject:
   m_ObjectHideFlags: 0
