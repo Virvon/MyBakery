@@ -14,7 +14,7 @@ namespace Virvon.MyBakery.Movement
         public event Action Activated;
         public event Action Deactivated;
 
-        [Inject]
+        //[Inject]
         public void Init(IInputService inputService)
         {
             _input = inputService;

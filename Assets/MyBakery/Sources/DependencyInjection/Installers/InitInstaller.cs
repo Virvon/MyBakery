@@ -30,7 +30,7 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
         {
             GameStateMachine stateMachine = Container.Resolve<Game>().StateMachine;
 
-            stateMachine.Enter<LoadSceneState, string>(GameScene, stateMachine.Enter<GameLoopState>);
+            //stateMachine.Enter<LoadGameLevelState, string>(GameScene, stateMachine.Enter<GameLoopState>);
         }
     }
 

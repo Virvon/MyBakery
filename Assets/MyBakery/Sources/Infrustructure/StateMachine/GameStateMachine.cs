@@ -1,20 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 using Virvon.MyBakery.DependencyInjection.Factories;
-using Virvon.MyBakery.Services;
 using Virvon.StateMachineModul;
+using Zenject;
 
 namespace Virvon.MyBakery.Infrustructure
 {
-    public class GameStateMachine : StateMachine
+    public class GameStateMachine : StateMachine, IInitializable
     {
-        public GameStateMachine(IClientFactory clientFactory, SceneLoader sceneLoader, LoadingPanel loadingPanel)
+        private readonly StateFactory _stateFactory;
+
+        public GameStateMachine(StateFactory stateFactory)
+        {
+            _stateFactory = stateFactory;
+        }
+
+        public void Initialize()
         {
             _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(LoadSceneState)] = new LoadSceneState(sceneLoader, loadingPanel),
-                [typeof(GameLoopState)] = new GameLoopState(clientFactory)
+                [typeof(BootstrapState)] = _stateFactory.CreateState<BootstrapState>(),
+                [typeof(LoadGameLevelState)] = _stateFactory.CreateState<LoadGameLevelState>(),
+                [typeof(GameLoopState)] = _stateFactory.CreateState<GameLoopState>()
             };
+
+            Enter<BootstrapState>();
         }
     }
 }

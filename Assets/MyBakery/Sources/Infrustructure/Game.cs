@@ -11,7 +11,7 @@ namespace Virvon.MyBakery.Infrustructure
         public Game(IClientFactory clientFactory, SceneLoader sceneLoader, LoadingPanel loadingPanel)
         {
             Debug.Log("Injected game");
-            StateMachine = new GameStateMachine(clientFactory, sceneLoader, loadingPanel);
+            //StateMachine = new GameStateMachine(clientFactory, sceneLoader, loadingPanel);
         }
     }
 }
