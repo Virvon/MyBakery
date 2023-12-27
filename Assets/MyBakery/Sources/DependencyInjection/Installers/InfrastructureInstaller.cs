@@ -14,6 +14,16 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
             BindSceneLoader();
             BindLoadingPanel();
             BindFactories();
+            BindInputService();
+        }
+
+        private void BindInputService()
+        {
+            Container
+                .Bind<IInputService>()
+                .To<InputService>()
+                .AsSingle()
+                .NonLazy();
         }
 
         private void BindLoadingPanel()
@@ -37,6 +47,7 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
         private void BindFactories()
         {
             Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
+            Container.Bind<IUIFactory>().To<UIFactory>().AsSingle();
             Container.Bind<IPlayerFactory>().To<PlayerFactory>().AsSingle();
         }
     }

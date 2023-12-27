@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Virvon.MyBakery.Services
@@ -11,29 +10,23 @@ namespace Virvon.MyBakery.Services
         [SerializeField] private RectTransform _handle;
 
         private Vector2 _startPosition;
-        private bool _isActivated;
 
         public static Vector2 Direction { get; private set; }
 
-        public static event Action Activated;
-        public static event Action Deactivated;
-
         private void Start()
         {
+            Debug.Log("Joystick");
+
             _startPosition = _handleBackgorund.anchoredPosition;
             _handleBackgorund.gameObject.SetActive(false);
-            _isActivated = false;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
             Vector2 pointPosition;
 
-            if (_isActivated == false && RectTransformUtility.ScreenPointToLocalPointInRectangle(_slidingArea, eventData.position, null, out pointPosition))
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_slidingArea, eventData.position, null, out pointPosition))
             {
-                _isActivated = true;
-                Activated?.Invoke();
-
                 _handleBackgorund.gameObject.SetActive(true);
                 _handleBackgorund.anchoredPosition = pointPosition;
             }
@@ -41,9 +34,6 @@ namespace Virvon.MyBakery.Services
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            _isActivated = false;
-            Deactivated?.Invoke();
-
             _handleBackgorund.anchoredPosition = _startPosition;
             _handle.anchoredPosition = Vector2.zero;
             _handleBackgorund.gameObject.SetActive(false);

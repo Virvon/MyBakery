@@ -7,26 +7,26 @@ namespace Virvon.MyBakery.DependencyInjection.Factories
     {
         private readonly DiContainer _container;
 
-        private Object _playerPrefab;
+        private GameObject _playerPrefab;
 
-        public PlayerFactory(DiContainer container)
-        {
+        public PlayerFactory(DiContainer container) => 
             _container = container;
-        }
 
         public void Load()
         {
-            _playerPrefab = Resources.Load("Player");
+            _playerPrefab = Resources.Load<GameObject>("Player");
         }
 
         public void Create()
         {
-            Player player = _container.InstantiatePrefabForComponent<Player>(_playerPrefab);
+            Player player = Object.Instantiate(_playerPrefab).GetComponent<Player>();
 
             _container
                 .Bind<Player>()
                 .FromInstance(player)
                 .AsSingle();
+
+            _container.InjectGameObject(_playerPrefab);
         }
     }
 }

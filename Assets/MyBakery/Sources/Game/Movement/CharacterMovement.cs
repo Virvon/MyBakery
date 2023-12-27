@@ -25,16 +25,7 @@ namespace Virvon.MyBakery.Movement
             _surfaceSlider = GetComponent<SurfaceSlider>();
             _input = GetComponent<IInputSource>();
 
-            StatsProvider = new DeffaultStats(_movementSpeed);
-
-            _input.Activated += OnActivated;
-            _input.Deactivated += OnDeactivated;
-        }
-
-        private void OnDisable()
-        {
-            _input.Activated -= OnActivated;
-            _input.Deactivated -= OnDeactivated;
+            StatsProvider = new DefaultStats(_movementSpeed);
         }
 
         private void OnActivated()
