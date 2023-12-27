@@ -15,7 +15,7 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
         {
             Container
                 .Bind<IInputService>()
-                .To<InputService>()
+                .To<JoystickInput>()
                 .AsSingle()
                 .NonLazy();
         }

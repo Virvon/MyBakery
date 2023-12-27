@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using Virvon.MyBakery.Services;
 using Zenject;
 
@@ -14,20 +15,53 @@ namespace Virvon.MyBakery.Movement
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private SurfaceSlider _surfaceSlider;
 
+        [SerializeField] private bool y;
+        
         private IInputService _inputService;
+        private static int x = 1;
 
         private float MovementSpeed => _player.StatsProvider.GetStats().MovementSpeed;
 
         [Inject]
-        private void Construct(IInputService inputService)
+        public void Construct(IInputService inputService)
         {
             _inputService = inputService;
 
-            Debug.Log("Player movement");
+            Debug.Log("Construct " + (_inputService != null));
+            Debug.Log("ID " + x++);
+            Debug.Log(this.GetHashCode());
+
+            y = _inputService != null;
+        }
+
+        private void Awake()
+        {
+            Debug.Log("Awake " + (_inputService != null));
+            Debug.Log("ID " + x++);
+            Debug.Log(this.GetHashCode());
+        }
+
+        private void OnEnable()
+        {
+            Debug.Log("Evable " + (_inputService != null));
+        }
+
+        private void Start()
+        {
+            Debug.Log("Start " + (_inputService != null));
+            Debug.Log(this.GetHashCode());
         }
 
         private void Update()
         {
+            if(_inputService == null)
+            {
+                Debug.Log("input service " + (_inputService != null));
+                return;
+            }
+
+            Debug.Log("input service " + _inputService.Direction);
+
             if (_inputService.Direction.sqrMagnitude > Epsilon)
                 Move();
         }

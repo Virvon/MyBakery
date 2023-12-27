@@ -21,12 +21,12 @@ namespace Virvon.MyBakery.DependencyInjection.Factories
         {
             Player player = Object.Instantiate(_playerPrefab).GetComponent<Player>();
 
+            _container.InjectGameObject(player.gameObject);
+
             _container
                 .Bind<Player>()
                 .FromInstance(player)
                 .AsSingle();
-
-            _container.InjectGameObject(_playerPrefab);
         }
     }
 }
