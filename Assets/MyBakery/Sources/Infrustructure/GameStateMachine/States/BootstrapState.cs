@@ -1,13 +1,11 @@
-﻿using Assets.MyBakery.Sources.Infrustructure;
-using Assets.MyBakery.Sources.Infrustructure.AssetMenegment;
-using Assets.MyBakery.Sources.UI.LoadingCurtain;
-using Cysharp.Threading.Tasks;
-using System;
+﻿using Cysharp.Threading.Tasks;
 using System.Threading.Tasks;
 using UnityEngine;
+using Virvon.MyBakery.Infrustructure.AssetManagement;
+using Virvon.MyBakery.UI;
 using Virvon.StateMachineModul;
 
-namespace Virvon.MyBakery.Infrustructure
+namespace Virvon.MyBakery.Infrustructure.States
 {
     public class BootstrapState : IState
     {

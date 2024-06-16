@@ -1,9 +1,9 @@
-﻿using Assets.MyBakery.Sources.Infrustructure.SceneMenegment;
-using Assets.MyBakery.Sources.UI.LoadingCurtain;
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
+using Virvon.MyBakery.Infrustructure.AssetManagement;
+using Virvon.MyBakery.UI;
 using Virvon.StateMachineModul;
 
-namespace Virvon.MyBakery.Infrustructure
+namespace Virvon.MyBakery.Infrustructure.States
 {
     public class LoadLevelState : IPayloadState<string>
     {
@@ -25,6 +25,7 @@ namespace Virvon.MyBakery.Infrustructure
             _stateMachine.Enter<GameLoopState>().Forget();
         }
 
+#pragma warning disable CS1998
         public async UniTask Exit() =>
             _loadingCurtain.Hide();
     }

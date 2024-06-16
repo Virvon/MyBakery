@@ -1,7 +1,7 @@
 ﻿using Virvon.StateMachineModul;
 using Zenject;
 
-namespace Virvon.MyBakery.Infrustructure
+namespace Virvon.MyBakery.Infrustructure.States
 {
     public class StatesFactory
     {

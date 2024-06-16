@@ -1,9 +1,7 @@
-﻿using Assets.MyBakery.Sources.Infrustructure.AssetMenegment;
-using Assets.MyBakery.Sources.Infrustructure.SceneMenegment;
-using Assets.MyBakery.Sources.UI.LoadingCurtain;
-using Cysharp.Threading.Tasks;
-using System;
-using Virvon.MyBakery.Infrustructure;
+﻿using Cysharp.Threading.Tasks;
+using Virvon.MyBakery.Infrustructure.AssetManagement;
+using Virvon.MyBakery.Infrustructure.States;
+using Virvon.MyBakery.UI;
 using Zenject;
 
 namespace Virvon.MyBakery.CompositionRoot

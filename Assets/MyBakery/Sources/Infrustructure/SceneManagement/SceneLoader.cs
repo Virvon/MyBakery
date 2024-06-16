@@ -4,7 +4,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-namespace Assets.MyBakery.Sources.Infrustructure.SceneMenegment
+namespace Virvon.MyBakery.Infrustructure.AssetManagement
 {
     public class SceneLoader : ISceneLoader
     {

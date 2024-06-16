@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Assets.MyBakery.Sources.UI.LoadingCurtain
+namespace Virvon.MyBakery.UI
 {
     public class LoadingCurtain : MonoBehaviour, ILoadingCurtain
     {

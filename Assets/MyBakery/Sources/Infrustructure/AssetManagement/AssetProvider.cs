@@ -7,7 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
 
-namespace Assets.MyBakery.Sources.Infrustructure.AssetMenegment
+namespace Virvon.MyBakery.Infrustructure.AssetManagement
 {
     public class AssetProvider : IAssetProvider
     {

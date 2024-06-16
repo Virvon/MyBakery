@@ -1,4 +1,4 @@
-﻿namespace Assets.MyBakery.Sources.UI.LoadingCurtain
+﻿namespace Virvon.MyBakery.UI
 {
     public interface ILoadingCurtain
     {

@@ -28,7 +28,7 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
 
         private void EnterGameLoopState()
         {
-            GameStateMachine stateMachine = Container.Resolve<Game>().StateMachine;
+            //GameStateMachine stateMachine = Container.Resolve<Game>().StateMachine;
 
             //stateMachine.Enter<LoadGameLevelState, string>(GameScene, stateMachine.Enter<GameLoopState>);
         }

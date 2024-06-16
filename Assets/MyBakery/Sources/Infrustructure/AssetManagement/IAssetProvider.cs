@@ -2,7 +2,7 @@
 using Cysharp.Threading.Tasks;
 using System.Threading.Tasks;
 
-namespace Assets.MyBakery.Sources.Infrustructure.AssetMenegment
+namespace Virvon.MyBakery.Infrustructure.AssetManagement
 {
     public interface IAssetProvider
     {

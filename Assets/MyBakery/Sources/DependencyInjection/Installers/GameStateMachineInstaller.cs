@@ -13,17 +13,17 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
 
         private void BindStates()
         {
-            Container.Bind<BootstrapState>().AsSingle().NonLazy();
-            Container.Bind<LoadGameLevelState>().AsSingle().NonLazy();
-            Container.Bind<GameLoopState>().AsSingle().NonLazy();
+            //Container.Bind<BootstrapState>().AsSingle().NonLazy();
+            //Container.Bind<LoadGameLevelState>().AsSingle().NonLazy();
+            //Container.Bind<GameLoopState>().AsSingle().NonLazy();
         }
 
         private void BindStateMachine()
         {
-            Container
-                .BindInterfacesAndSelfTo<GameStateMachine>()
-                .AsSingle()
-                .NonLazy();
+            //Container
+            //    .BindInterfacesAndSelfTo<GameStateMachine>()
+            //    .AsSingle()
+            //    .NonLazy();
         }
     }
 }

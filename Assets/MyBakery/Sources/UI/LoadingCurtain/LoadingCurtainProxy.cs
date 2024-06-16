@@ -1,9 +1,8 @@
-﻿using Assets.MyBakery.Sources.Infrustructure;
-using Cysharp.Threading.Tasks;
-using System.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Virvon.MyBakery.Infrustructure;
 
-namespace Assets.MyBakery.Sources.UI.LoadingCurtain
+namespace Virvon.MyBakery.UI
 {
     public class LoadingCurtainProxy : ILoadingCurtain
     {

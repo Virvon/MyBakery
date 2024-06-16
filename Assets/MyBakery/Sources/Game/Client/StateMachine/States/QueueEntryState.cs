@@ -18,6 +18,7 @@ namespace Virvon.MyBakery.Client
 
         public void Enter()
         {
+#pragma warning disable CS4014
             _stateMachine.Enter<MovementState, Vector3>(_queue.GetPoint());
         }
 

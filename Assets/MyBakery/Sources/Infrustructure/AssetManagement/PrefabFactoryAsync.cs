@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Assets.MyBakery.Sources.Infrustructure.AssetMenegment
+namespace Virvon.MyBakery.Infrustructure.AssetManagement
 {
     public class PrefabFactoryAsync<TComponent> : IFactory<string, UniTask<TComponent>>
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace Virvon.MyBakery.Infrustructure
+namespace Virvon.MyBakery.Infrustructure.States
 {
     public class GameStateMachineInstaller : Installer<GameStateMachineInstaller>
     {

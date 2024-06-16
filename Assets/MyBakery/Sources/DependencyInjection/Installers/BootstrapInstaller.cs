@@ -50,11 +50,11 @@ namespace Virvon.MyBakery.DependencyInjection.Installers
 
         private void BindGame()
         {
-            Container
-                .Bind<Game>()
-                .FromNew()
-                .AsSingle()
-                .NonLazy();
+            //Container
+            //    .Bind<Game>()
+            //    .FromNew()
+            //    .AsSingle()
+            //    .NonLazy();
         }
 
         private void BindSceneLoader()

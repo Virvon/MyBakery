@@ -1,4 +1,4 @@
-﻿namespace Assets.MyBakery.Sources.Infrustructure
+﻿namespace Virvon.MyBakery.Infrustructure
 {
     public class InfrasructureAssetPath
     {

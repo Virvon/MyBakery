@@ -1,6 +1,6 @@
 ﻿using Virvon.StateMachineModul;
 
-namespace Virvon.MyBakery.Infrustructure
+namespace Virvon.MyBakery.Infrustructure.States
 {
     public class GameStateMachine : StateMachine
     {

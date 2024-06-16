@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace Assets.MyBakery.Sources.Infrustructure.SceneMenegment
+namespace Virvon.MyBakery.Infrustructure.AssetManagement
 {
     public interface ISceneLoader
     {

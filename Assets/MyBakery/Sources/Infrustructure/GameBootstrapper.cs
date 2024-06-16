@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Virvon.MyBakery.Infrustructure.States;
 using Zenject;
 
 namespace Virvon.MyBakery.Infrustructure
@@ -23,6 +24,7 @@ namespace Virvon.MyBakery.Infrustructure
             _gameStateMachine.RegisterState(_statesFactory.Create<LoadLevelState>());
             _gameStateMachine.RegisterState(_statesFactory.Create<GameLoopState>());
 
+#pragma warning disable CS4014
             _gameStateMachine.Enter<BootstrapState>();
 
             DontDestroyOnLoad(this);
