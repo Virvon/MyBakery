@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 using Virvon.MyBakery.Equipment;
 using Virvon.StateMachineModul;
 
@@ -23,6 +24,16 @@ namespace Virvon.MyBakery.Client
         public void Exit()
         {
             
+        }
+
+        UniTask IState.Enter()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        UniTask IExitableState.Exit()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

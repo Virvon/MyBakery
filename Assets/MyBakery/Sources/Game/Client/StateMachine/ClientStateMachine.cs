@@ -13,11 +13,11 @@ namespace Virvon.MyBakery.Client
         {
             Debug.Log("Client state machine");
 
-            _states = new Dictionary<Type, IExitableState>
-            {
-                [typeof(QueueEntryState)] = new QueueEntryState(this, testQueue),
-                [typeof(MovementState)] = new MovementState(input)
-            };
+            //_states = new Dictionary<Type, IExitableState>
+            //{
+            //    [typeof(QueueEntryState)] = new QueueEntryState(this, testQueue),
+            //    [typeof(MovementState)] = new MovementState(input)
+            //};
         }
     }
 }

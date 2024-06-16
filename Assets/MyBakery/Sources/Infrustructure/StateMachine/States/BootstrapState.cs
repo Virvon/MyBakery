@@ -1,24 +1,44 @@
-﻿using Virvon.StateMachineModul;
+﻿using Assets.MyBakery.Sources.Infrustructure;
+using Assets.MyBakery.Sources.Infrustructure.AssetMenegment;
+using Assets.MyBakery.Sources.UI.LoadingCurtain;
+using Cysharp.Threading.Tasks;
+using System;
+using System.Threading.Tasks;
+using UnityEngine;
+using Virvon.StateMachineModul;
 
 namespace Virvon.MyBakery.Infrustructure
 {
     public class BootstrapState : IState
     {
         private readonly GameStateMachine _stateMachine;
+        private readonly LoadingCurtainProxy _loadingCurtainProxy;
+        private readonly IAssetProvider _assetProvider;
 
-        public BootstrapState(GameStateMachine stateMachine)
+        public BootstrapState(GameStateMachine stateMachine, LoadingCurtainProxy loadingCurtainProxy, IAssetProvider assetProvider)
         {
+            Debug.Log("Construct bootstrap state");
             _stateMachine = stateMachine;
+            _loadingCurtainProxy = loadingCurtainProxy;
+            _assetProvider = assetProvider;
         }
 
-        public void Enter()
+        public async UniTask Enter()
         {
-            _stateMachine.Enter<LoadGameLevelState>();
+            Debug.Log("Enter bootstrap state");
+
+            await InitServices();
+
+            _stateMachine.Enter<LoadLevelState, string>(InfrasructureAssetPath.GameScene).Forget();
         }
 
-        public void Exit()
+        public UniTask Exit() => 
+            default;
+
+        private async Task InitServices()
         {
-            
+            await _assetProvider.InitializeAsync();
+            await _loadingCurtainProxy.InitializeAsync();
         }
     }
 }

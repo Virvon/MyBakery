@@ -1,17 +1,20 @@
-﻿using Virvon.StateMachineModul;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
+using Virvon.StateMachineModul;
 
 namespace Virvon.MyBakery.Infrustructure
 {
     public class GameLoopState : IState
     {
-        public void Enter()
+        public UniTask Enter()
         {
-            
+            Debug.Log("Eneter Game loop state");
+            return default;
         }
 
-        public void Exit()
+        public UniTask Exit()
         {
-
+            return default;
         }
     }
 }

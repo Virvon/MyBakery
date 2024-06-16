@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 
@@ -5,28 +6,35 @@ namespace Virvon.StateMachineModul
 {
     public abstract class StateMachine : IStateMachine
     {
-        protected Dictionary<Type, IExitableState> _states;
+        private readonly Dictionary<Type, IExitableState> _states;
 
         private IExitableState _currentState;
 
-        public void Enter<TState>() where TState : class, IState
+        public StateMachine() =>
+            _states = new();
+
+        public async UniTask Enter<TState>() where TState : class, IState
         {
-            TState state = ChangeState<TState>();
-            state.Enter();
+            TState state = await ChangeState<TState>();
+            await state.Enter();
         }
 
-        public void Enter<TState, TPayload>(TPayload payload, Action callback = null) where TState : class, IPayloadState<TPayload>
+        public async UniTask Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload>
         {
-            TState state = ChangeState<TState>();
-            state.Enter(payload, callback);
+            TState state = await ChangeState<TState>();
+            await state.Enter(payload);
         }
+
+        public void RegisterState<TState>(TState state) where TState : IExitableState =>
+            _states.Add(typeof(TState), state);
 
         private TState GetState<TState>() where TState : class, IExitableState =>
                 _states[typeof(TState)] as TState;
 
-        private TState ChangeState<TState>() where TState : class, IExitableState
+        private async UniTask<TState> ChangeState<TState>() where TState : class, IExitableState
         {
-            _currentState?.Exit();
+            if (_currentState != null)
+                await _currentState.Exit();
 
             TState state = GetState<TState>();
 

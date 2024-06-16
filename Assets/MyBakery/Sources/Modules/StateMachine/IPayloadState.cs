@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Cysharp.Threading.Tasks;
+using System;
 
 namespace Virvon.StateMachineModul
 {
     public interface IPayloadState<TPayload> : IExitableState
     {
-        void Enter(TPayload payload, Action callback = null);
+        UniTask Enter(TPayload payload);
     }
 }

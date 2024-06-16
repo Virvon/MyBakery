@@ -1,7 +1,9 @@
-﻿namespace Virvon.StateMachineModul
+﻿using Cysharp.Threading.Tasks;
+
+namespace Virvon.StateMachineModul
 {
     public interface IExitableState
     {
-        void Exit();
+        UniTask Exit();
     }
 }

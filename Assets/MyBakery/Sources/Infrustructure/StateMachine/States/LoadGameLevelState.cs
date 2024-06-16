@@ -1,4 +1,5 @@
-﻿using Virvon.MyBakery.DependencyInjection.Factories;
+﻿using Cysharp.Threading.Tasks;
+using Virvon.MyBakery.DependencyInjection.Factories;
 using Virvon.MyBakery.Services;
 using Virvon.StateMachineModul;
 
@@ -36,6 +37,16 @@ namespace Virvon.MyBakery.Infrustructure
 
         public void Exit() =>
             _loadingPanel.Close();
+
+        UniTask IState.Enter()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        UniTask IExitableState.Exit()
+        {
+            throw new System.NotImplementedException();
+        }
 
         private void OnLoaded()
         {
