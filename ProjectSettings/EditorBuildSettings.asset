@@ -8,8 +8,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MyBakery/Scenes/Bootstrap.unity
     guid: 7a1f4c1c918d556448a56818906d00fd
-  - enabled: 1
-    path: Assets/MyBakery/Scenes/Game.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: cacc8c0bb7bc6704d8706c642c139206, type: 2}

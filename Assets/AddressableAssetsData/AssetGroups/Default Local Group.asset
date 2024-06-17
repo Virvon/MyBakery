@@ -21,6 +21,11 @@ MonoBehaviour:
     m_Address: LoadingCurtain
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
+    m_Address: Game
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Scenes
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 40457fa2feaf14c49ac01e40f8e5f89b, type: 2}
   m_SchemaSet:

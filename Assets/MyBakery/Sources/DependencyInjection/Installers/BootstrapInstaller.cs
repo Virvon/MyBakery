@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using Virvon.MyBakery.DependencyInjection.Factories;
 using Virvon.MyBakery.Infrustructure;
+using Virvon.MyBakery.Infrustructure.AssetManagement;
 using Virvon.MyBakery.Services;
+using Virvon.MyBakery.Services.Input;
 using Zenject;
 
 namespace Virvon.MyBakery.DependencyInjection.Installers

@@ -2,7 +2,7 @@
 using UnityEngine.InputSystem;
 using Virvon.MyBakery.Input;
 
-namespace Virvon.MyBakery.Services
+namespace Virvon.MyBakery.Services.Input
 {
     public class JoystickInput : IInputService
     {

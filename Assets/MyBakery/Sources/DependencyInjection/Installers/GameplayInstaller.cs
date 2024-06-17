@@ -1,5 +1,6 @@
 ﻿using System;
 using Virvon.MyBakery.Services;
+using Virvon.MyBakery.Services.Input;
 using Zenject;
 
 namespace Virvon.MyBakery.DependencyInjection.Installers

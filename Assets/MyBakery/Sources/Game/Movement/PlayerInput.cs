@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Virvon.MyBakery.Services;
+using Virvon.MyBakery.Services.Input;
 using Zenject;
 
 namespace Virvon.MyBakery.Movement

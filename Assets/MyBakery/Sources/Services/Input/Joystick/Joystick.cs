@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.InputSystem.Layouts;
 
-namespace Virvon.MyBakery.Services
+namespace Virvon.MyBakery.Services.Input
 {
     internal class Joystick : OnScreenControl, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
@@ -12,8 +12,7 @@ namespace Virvon.MyBakery.Services
         [SerializeField] private RectTransform _handle;
 
         [InputControl(layout = "Vector2")]
-        [SerializeField]
-        private string _controlPath;
+        [SerializeField] private string _controlPath;
 
         private Vector2 _startPosition;
         private bool _isPointerDown;
