@@ -22,8 +22,6 @@ namespace Virvon.MyBakery.Services.Input
         {
             _inputAction.Player.Movement.performed -= OnMove;
             _inputAction.Disable();
-
-            Debug.Log("Jostick input deleted");
         }
 
         private void OnMove(InputAction.CallbackContext ctx) =>

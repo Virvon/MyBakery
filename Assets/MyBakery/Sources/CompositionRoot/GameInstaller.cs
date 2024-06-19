@@ -1,4 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
+using System;
+using Virvon.MyBakery.Gameplay;
+using Virvon.MyBakery.Infrustructure;
 using Virvon.MyBakery.Infrustructure.AssetManagement;
 using Virvon.MyBakery.Infrustructure.States;
 using Virvon.MyBakery.Services.Input;
@@ -13,18 +16,28 @@ namespace Virvon.MyBakery.CompositionRoot
         {
             BindGameStateMachine();
             BindLoadingCurtain();
-            BindGameInstaller();
+            BindAssetProvider();
             BindSceneLoader();
             BindInputService();
+            BindGameplayFactory();
         }
 
-        private void BindInputService() => 
+        private void BindGameplayFactory()
+        {
+            Container
+                .Bind<IGameplayFactory>()
+                .FromSubContainerResolve()
+                .ByInstaller<GameplayFactoryInstaller>()
+                .AsSingle();
+        }
+
+        private void BindInputService() =>
             Container.BindInterfacesAndSelfTo<JoystickInput>().AsSingle();
 
         private void BindSceneLoader() =>
             Container.BindInterfacesTo<SceneLoader>().AsSingle();
 
-        private void BindGameInstaller() =>
+        private void BindAssetProvider() =>
             Container.BindInterfacesTo<AssetProvider>().AsSingle();
 
         private void BindLoadingCurtain()

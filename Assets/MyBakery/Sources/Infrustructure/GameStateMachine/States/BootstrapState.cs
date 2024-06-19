@@ -15,7 +15,6 @@ namespace Virvon.MyBakery.Infrustructure.States
 
         public BootstrapState(GameStateMachine stateMachine, LoadingCurtainProxy loadingCurtainProxy, IAssetProvider assetProvider)
         {
-            Debug.Log("Construct bootstrap state");
             _stateMachine = stateMachine;
             _loadingCurtainProxy = loadingCurtainProxy;
             _assetProvider = assetProvider;
@@ -23,8 +22,6 @@ namespace Virvon.MyBakery.Infrustructure.States
 
         public async UniTask Enter()
         {
-            Debug.Log("Enter bootstrap state");
-
             await InitServices();
 
             _stateMachine.Enter<LoadLevelState, string>(InfrasructureAssetPath.GameScene).Forget();

@@ -2,10 +2,12 @@
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.InputSystem.Layouts;
+using Zenject;
+using Cysharp.Threading.Tasks;
 
 namespace Virvon.MyBakery.Services.Input
 {
-    internal class Joystick : OnScreenControl, IPointerDownHandler, IPointerUpHandler, IDragHandler
+    public class Joystick : OnScreenControl, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
         [SerializeField] private RectTransform _slidingArea;
         [SerializeField] private RectTransform _handleBackgorund;
@@ -27,8 +29,6 @@ namespace Virvon.MyBakery.Services.Input
 
         private void Start()
         {
-            Debug.Log("Joystick");
-
             _isPointerDown = false;
             _startPosition = _handleBackgorund.anchoredPosition;
             _handleBackgorund.gameObject.SetActive(false);
@@ -50,7 +50,6 @@ namespace Virvon.MyBakery.Services.Input
         {
             if (_isPointerDown)
             {
-                Debug.Log("pointer up");
                 _isPointerDown = false;
                 SendValueToControl(Vector2.zero);
                 Direction = Vector2.zero;

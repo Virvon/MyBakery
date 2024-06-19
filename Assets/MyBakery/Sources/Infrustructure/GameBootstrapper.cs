@@ -14,8 +14,6 @@ namespace Virvon.MyBakery.Infrustructure
         {
             _gameStateMachine = gameStateMachine;
             _statesFactory = statesFactory;
-
-            Debug.Log("Construct game bootstrapper");
         }
 
         private void Start()

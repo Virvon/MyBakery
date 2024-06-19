@@ -15,22 +15,12 @@ namespace Virvon.MyBakery.Infrustructure.AssetManagement
 
         public AssetProvider()
         {
-            Debug.Log("Construct asset provider");
-
             _assetRequest = new();
         }
 
         public async UniTask InitializeAsync()
         {
-            try
-            {
-                await Addressables.InitializeAsync().ToUniTask();
-                Debug.Log("Succsess in initialize asset provider");
-            }
-            catch
-            {
-                Debug.LogError("Error in initialize asset provider");
-            }
+            await Addressables.InitializeAsync().ToUniTask();
         }
 
         public async UniTask<TAsset> Load<TAsset>(string key) where TAsset : class

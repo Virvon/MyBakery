@@ -12,8 +12,6 @@ namespace Virvon.MyBakery.UI
 
         public LoadingCurtainProxy(LoadingCurtain.Factory factory)
         {
-            Debug.Log("Construct loading curtain proxy");
-
             _factory = factory;
         }
 

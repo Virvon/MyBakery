@@ -9,8 +9,6 @@ namespace Virvon.MyBakery.Infrustructure.States
         {
             Container.Bind<StatesFactory>().AsSingle();
             Container.Bind<GameStateMachine>().AsSingle();
-
-            Debug.Log("Install bindings to game state machine installer");
         }
     }
 }

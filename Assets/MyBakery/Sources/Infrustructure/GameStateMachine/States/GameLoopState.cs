@@ -1,5 +1,4 @@
 ﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
 using Virvon.StateMachineModul;
 
 namespace Virvon.MyBakery.Infrustructure.States
@@ -8,7 +7,6 @@ namespace Virvon.MyBakery.Infrustructure.States
     {
         public UniTask Enter()
         {
-            Debug.Log("Eneter Game loop state");
             return default;
         }
 
