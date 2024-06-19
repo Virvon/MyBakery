@@ -6,7 +6,9 @@ namespace Virvon.MyBakery.Gameplay
 {
     public class GameplayBootstrapper : IInitializable
     {
-        public readonly IGameplayFactory _gameplayFactory;
+        private const string PlayerCharacterStartPoint = "PlayerCharacterInitializePoint";
+
+        private readonly IGameplayFactory _gameplayFactory;
 
         public GameplayBootstrapper(IGameplayFactory gameplayFactory)
         {
@@ -16,6 +18,7 @@ namespace Virvon.MyBakery.Gameplay
         public async void Initialize()
         {
             await _gameplayFactory.CreateHud();
+            await _gameplayFactory.CreatePlayerCharacter(GameObject.FindWithTag(PlayerCharacterStartPoint).transform.position);
         }
     }
 }

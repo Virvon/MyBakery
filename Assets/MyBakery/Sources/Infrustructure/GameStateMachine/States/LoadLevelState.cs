@@ -16,7 +16,7 @@ namespace Virvon.MyBakery.Infrustructure.States
         private readonly ILoadingCurtain _loadingCurtain;
         private readonly ISceneLoader _sceneLoader;
 
-        public LoadLevelState(GameStateMachine stateMachine, ILoadingCurtain loadingCurtain, ISceneLoader sceneLoader, IGameplayFactory ga)
+        public LoadLevelState(GameStateMachine stateMachine, ILoadingCurtain loadingCurtain, ISceneLoader sceneLoader)
         {
             _stateMachine = stateMachine;
             _loadingCurtain = loadingCurtain;

@@ -3,7 +3,7 @@ using Virvon.MyBakery.StatsDecorator;
 
 namespace Virvon.MyBakery.Movement
 {
-    public class Player : MonoBehaviour
+    public class PlayerStatsProvider : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed;
 

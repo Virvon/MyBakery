@@ -30,6 +30,10 @@ MonoBehaviour:
     m_Address: Hud
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 919bcbf09eab3bb448eb49089aacf7d1
+    m_Address: PlayerCharacter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 40457fa2feaf14c49ac01e40f8e5f89b, type: 2}
   m_SchemaSet:

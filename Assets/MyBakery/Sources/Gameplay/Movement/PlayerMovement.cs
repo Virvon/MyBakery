@@ -10,7 +10,7 @@ namespace Virvon.MyBakery.Movement
 
         [SerializeField] private float _rotationSpeed;
 
-        [SerializeField] private Player _player;
+        [SerializeField] private PlayerStatsProvider _player;
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private SurfaceSlider _surfaceSlider;
 
@@ -26,40 +26,30 @@ namespace Virvon.MyBakery.Movement
         {
             _inputService = inputService;
 
-            Debug.Log("Construct " + (_inputService != null));
-            Debug.Log("ID " + x++);
-            Debug.Log(this.GetHashCode());
 
             y = _inputService != null;
         }
 
         private void Awake()
         {
-            Debug.Log("Awake " + (_inputService != null));
-            Debug.Log("ID " + x++);
-            Debug.Log(this.GetHashCode());
+
         }
 
         private void OnEnable()
         {
-            Debug.Log("Evable " + (_inputService != null));
         }
 
         private void Start()
         {
-            Debug.Log("Start " + (_inputService != null));
-            Debug.Log(this.GetHashCode());
+
         }
 
         private void Update()
         {
             if(_inputService == null)
             {
-                Debug.Log("input service " + (_inputService != null));
                 return;
             }
-
-            Debug.Log("input service " + _inputService.Direction);
 
             if (_inputService.Direction.sqrMagnitude > Epsilon)
                 Move();

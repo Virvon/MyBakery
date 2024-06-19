@@ -15,6 +15,10 @@ namespace Virvon.MyBakery.Gameplay
             Container
                 .BindFactory<string, UniTask<GameObject>, HudFactory>()
                 .FromFactory<PrefabFactoryAsync<GameObject>>();
+
+            Container
+                .BindFactory<string, UniTask<PlayerCharacter>, PlayerCharacter.Factory>()
+                .FromFactory<PrefabFactoryAsync<PlayerCharacter>>();
         }
     }
 }
