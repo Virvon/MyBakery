@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Virvon.MyBakery.Infrustructure
@@ -7,5 +8,6 @@ namespace Virvon.MyBakery.Infrustructure
     {
         UniTask CreateHud();
         UniTask CreatePlayerCharacter(Vector3 position);
+        UniTask CreatePlayerCharacterCamera();
     }
 }

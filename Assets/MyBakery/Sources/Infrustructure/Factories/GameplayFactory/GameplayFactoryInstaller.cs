@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Virvon.MyBakery.Gameplay.Characters;
 using Virvon.MyBakery.Infrustructure;
 using Virvon.MyBakery.Infrustructure.AssetManagement;
 using Zenject;
@@ -19,6 +20,10 @@ namespace Virvon.MyBakery.Gameplay
             Container
                 .BindFactory<string, UniTask<PlayerCharacter>, PlayerCharacter.Factory>()
                 .FromFactory<PrefabFactoryAsync<PlayerCharacter>>();
+
+            Container
+                .BindFactory<string, UniTask<PlayerCharacterCamera>, PlayerCharacterCamera.Factory>()
+                .FromFactory<PrefabFactoryAsync<PlayerCharacterCamera>>();
         }
     }
 }

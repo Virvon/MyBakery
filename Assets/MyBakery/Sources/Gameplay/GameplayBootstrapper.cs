@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using Virvon.MyBakery.Gameplay.Characters;
 using Virvon.MyBakery.Infrustructure;
+using Virvon.StateMachineModul;
 using Zenject;
 
 namespace Virvon.MyBakery.Gameplay
@@ -19,6 +21,7 @@ namespace Virvon.MyBakery.Gameplay
         {
             await _gameplayFactory.CreateHud();
             await _gameplayFactory.CreatePlayerCharacter(GameObject.FindWithTag(PlayerCharacterStartPoint).transform.position);
+            await _gameplayFactory.CreatePlayerCharacterCamera();
         }
     }
 }

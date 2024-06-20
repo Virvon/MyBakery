@@ -13,10 +13,8 @@ GameObject:
   - component: {fileID: 9097428615341224948}
   - component: {fileID: 9097428615341224949}
   - component: {fileID: 9097428615341224944}
-  - component: {fileID: 9097428615341224718}
   - component: {fileID: 998514295611869283}
-  - component: {fileID: 4627843355316368313}
-  - component: {fileID: 4459543019510847493}
+  - component: {fileID: 4163454468592320877}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -121,18 +119,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &9097428615341224718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097428615341224950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a699e63256974549acd9c47ef2654b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &998514295611869283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e066dd0bd9acc408ec6783a173d66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4627843355316368313
+--- !u!114 &4163454468592320877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,27 +140,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9097428615341224950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96185d28fac90704ab4f8eacfa9b5d06, type: 3}
+  m_Script: {fileID: 11500000, guid: b82dcea7258df9144ba174bb02255659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 10
---- !u!114 &4459543019510847493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097428615341224950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b7683ad2bfced4ead02f523581860b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 1000
-  _player: {fileID: 4627843355316368313}
   _rigidbody: {fileID: 9097428615341224944}
-  _surfaceSlider: {fileID: 9097428615341224718}
-  y: 0
+  _movementSpeed: 5
+  _rotationSpeed: 1080
 --- !u!1 &9097428615393457003
 GameObject:
   m_ObjectHideFlags: 0

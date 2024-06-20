@@ -34,6 +34,10 @@ MonoBehaviour:
     m_Address: PlayerCharacter
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: e050c894b448a684fa024a143ecbc8e3
+    m_Address: PlayerCharacterCamera
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 40457fa2feaf14c49ac01e40f8e5f89b, type: 2}
   m_SchemaSet:

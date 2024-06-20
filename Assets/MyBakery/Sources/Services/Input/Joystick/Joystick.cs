@@ -2,8 +2,6 @@
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.InputSystem.Layouts;
-using Zenject;
-using Cysharp.Threading.Tasks;
 
 namespace Virvon.MyBakery.Services.Input
 {
@@ -51,8 +49,8 @@ namespace Virvon.MyBakery.Services.Input
             if (_isPointerDown)
             {
                 _isPointerDown = false;
-                SendValueToControl(Vector2.zero);
                 Direction = Vector2.zero;
+                SendValueToControl(Vector2.zero);
 
                 _handleBackgorund.anchoredPosition = _startPosition;
                 _handle.anchoredPosition = Vector2.zero;

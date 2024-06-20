@@ -15,16 +15,21 @@ namespace Virvon.MyBakery.Services.Input
             _inputAction = new GameInputAction();
             _inputAction.Enable();
 
-            _inputAction.Player.Movement.performed += OnMove;
+            _inputAction.Player.Movement.performed += OnPerformed;
+            _inputAction.Player.Movement.canceled += OnCancele;
         }
 
         ~JoystickInput()
         {
-            _inputAction.Player.Movement.performed -= OnMove;
+            _inputAction.Player.Movement.performed -= OnPerformed;
+            _inputAction.Player.Movement.performed -= OnCancele;
             _inputAction.Disable();
         }
 
-        private void OnMove(InputAction.CallbackContext ctx) =>
+        private void OnPerformed(InputAction.CallbackContext ctx) =>
             Direction = ctx.ReadValue<Vector2>();
+
+        private void OnCancele(InputAction.CallbackContext ctx) =>
+            Direction = Vector2.zero;
     }
 }
